@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Descubre productos de Alawao para enviar a Cuba. Explora ofertas, hogar, electrodomésticos, perfumería, alimentos y mucho más."
+  >
+
+  <meta name="theme-color" content="#087f5b">
+
+  <title>Alawao — Productos para enviar a Cuba</title>
+
+  <style>
+    :root {
+      --verde: #087f5b;
+      --verde-oscuro: #07543f;
+      --verde-claro: #eaf7f2;
+      --dorado: #f2b84b;
+      --texto: #17231e;
+      --gris: #68766f;
+      --blanco: #ffffff;
+      --fondo: #f7f9f8;
+      --borde: #dce8e2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 14px;
+    }
+
+    header {
+      background: var(--blanco);
+      border-bottom: 1px solid var(--borde);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+    }
+
+    .marca span {
+      background: #0057B8;
+      border-radius: 10px;
+      padding: 7px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .marca img {
+      width: 140px;
+      height: auto;
+      display: block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--verde);
+      color: var(--blanco);
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--verde-oscuro);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 20px 55px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--verde);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      margin: 12px 0 18px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      color: var(--gris);
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--verde);
+      color: var(--verde);
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .confidence {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+    }
+
+    .confidence h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .confidence p {
+      margin: 10px 0;
+      color: var(--gris);
+      font-size: 15px;
+    }
+
+    section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      color: var(--gris);
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--gris);
+      margin-bottom: 0;
+    }
+
+    .promociones {
+      background: var(--verde-claro);
+      border-radius: 24px;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .producto-card {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .producto-categoria {
+      color: var(--verde);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .producto-card h3 {
+      font-size: 22px;
+      margin: 5px 0 10px;
+    }
+
+    .producto-card p {
+      color: var(--gris);
+      margin-top: 0;
+      flex: 1;
+    }
+
+    .precio {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 18px 0;
+    }
+
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .categoria {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .categoria:hover {
+      border-color: var(--verde);
+      color: var(--verde);
+    }
+
+    .cta-final {
+      text-align: center;
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      border-radius: 24px;
+      padding: 55px 25px;
+    }
+
+    .cta-final h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin: 0 0 12px;
+    }
+
+    .cta-final p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      opacity: 0.9;
+    }
+
+    .legal {
+      max-width: 900px;
+      margin: auto;
+      color: var(--gris);
+      font-size: 13px;
+      padding: 55px 20px;
+    }
+
+    footer {
+      background: #10231d;
+      color: var(--blanco);
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 8px 0;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+      }
+
+      .cards,
+      .productos {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .categorias {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        padding: 10px 14px;
+      }
+
+      .marca img {
+        width: 120px;
+      }
+
+      .nav .btn {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 45px 16px 35px;
+      }
+
+      section {
+        padding: 45px 16px;
+      }
+
+      .cards,
+      .productos,
+      .categorias {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    🇨🇺 Todos los envíos se realizan a todas las provincias de Cuba
+  </div>
+
+  <header>
+    <nav class="nav">
+
+      <a
+        class="marca"
+        href="#inicio"
+        aria-label="Alawao"
+        style="display:flex;align-items:center;"
+      >
+        <span
+          style="
+            background:#0057B8;
+            border-radius:10px;
+            padding:7px 12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          "
+        >
+          <img
+            src="https://alawao.com/wp-content/uploads/2026/01/vieja.webp"
+            alt="logo alawao"
+            style="width:140px;height:auto;display:block;"
+          >
+        </span>
+      </a>
+
+      <a
+        class="btn"
+        href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        VISITAR ALAWAO
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+      <div>
+        <div class="eyebrow">
+          Compra fácil · rápido · seguro
+        </div>
+
+        <h1>
+          Encuentra lo que buscas para enviar a Cuba.
+        </h1>
+
+        <p>
+          Descubre una selección de productos y oportunidades disponibles
+          en Alawao. Cuando encuentres lo que buscas, continúa directamente
+          en Alawao.com.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="btn"
+            href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            EXPLORAR ALAWAO
+          </a>
+
+          <a class="btn-secondary" href="#seleccion">
+            VER SELECCIÓN
+          </a>
+
+        </div>
+      </div>
+
+      <div class="confidence">
+
+        <h2>Compra con confianza</h2>
+
+        <p>✓ Compra directamente en Alawao.com</p>
+        <p>✓ Esta vitrina no añade un cargo extra</p>
+        <p>✓ Precios y disponibilidad se confirman en la plataforma</p>
+        <p>✓ Entrega y condiciones dependen del producto y destino</p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONFIANZA -->
+    <section>
+
+      <div class="section-heading">
+
+        <h2>
+          Una vitrina sencilla para ayudarte a elegir
+        </h2>
+
+        <p>
+          Descubre una selección y entra a Alawao para completar tu compra.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Compra directa</h3>
+          <p>
+            Los botones te llevan a Alawao.com para realizar el pedido.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sin costo adicional</h3>
+          <p>
+            No se añade ningún cargo por utilizar esta página.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Información clara</h3>
+          <p>
+            Confirma precio, disponibilidad, entrega y condiciones antes de pagar.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROMOCIONES -->
+    <section>
+
+      <div class="promociones">
+
+        <div style="padding:35px;">
+
+          <div class="section-heading">
+
+            <h2>
+              Promociones y oportunidades
+            </h2>
+
+            <p>
+              Descubre ofertas, productos destacados y opciones de entrega
+              disponibles en Alawao.
+            </p>
+
+          </div>
+
+          <div class="cards">
+
+            <div class="card">
+
+              <div class="producto-categoria">
+                OFERTAS
+              </div>
+
+              <h3>
+                Oportunidades especiales
+              </h3>
+
+              <p>
+                Encuentra artículos con promociones directamente en la plataforma.
+              </p>
+
+              <br>
+
+              <a
+                class="btn"
+                href="https://alawao.com/en-oferta/"
+                target="_blank"
+                rel="noopener"
+              >
+                VER OFERTAS
+              </a>
+
+            </div>
+
+
+            <div class="card">
+
+              <div class="producto-categoria">
+                ENTREGA EXPRESS
+              </div>
+
+              <h3>
+                Entrega rápida
+              </h3>
+
+              <p>
+                Algunos productos muestran opciones de entrega express
+                según disponibilidad.
+              </p>
+
+              <br>
+
+              <a
+                class="btn"
+                href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                EXPLORAR
+              </a>
+
+            </div>
+
+
+            <div class="card">
+
+              <div class="producto-categoria">
+                ENVÍO GRATIS
+              </div>
+
+              <h3>
+                Consulta las condiciones
+              </h3>
+
+              <p>
+                Algunos artículos muestran envío gratis según producto y destino.
+              </p>
+
+              <br>
+
+              <a
+                class="btn"
+                href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                EXPLORAR
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+    <section id="seleccion">
+
+      <div class="section-heading">
+
+        <h2>
+          Una pequeña selección para comenzar
+        </h2>
+
+        <p>
+          Solo una muestra. Hay mucho más por descubrir en Alawao.
+        </p>
+
+      </div>
+
+
+      <div class="productos">
+
+        <!-- PRODUCTO 1 -->
+        <article class="producto-card">
+
+          <div class="producto-categoria">
+            ELECTRODOMÉSTICOS
+          </div>
+
+          <h3>
+            Combo Electrodomésticos
+          </h3>
+
+          <p>
+            Tostadora, picatodo, licuadora y freidora de aire digital.
+          </p>
+
+          <div class="precio">
+            $247.75 USD
+          </div>
+
+          <a
+            href="https://alawao.com/producto/combo-electrodomesticos-2/"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            VER PRODUCTO Y COMPRAR
+          </a>
+
+        </article>
+
+
+        <!-- PRODUCTO 2 -->
+        <article class="producto-card">
+
+          <div class="producto-categoria">
+            CLIMATIZACIÓN
+          </div>
+
+          <h3>
+            AC Ventana 5000 BTU Vissani
+          </h3>
+
+          <p>
+            Aire acondicionado de ventana para espacios pequeños.
+          </p>
+
+          <div class="precio">
+            $307.95 USD
+          </div>
+
+          <a
+            href="https://alawao.com/producto/ac-ventana-5000-btu-vissani/"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            VER PRODUCTO Y COMPRAR
+          </a>
+
+        </article>
+
+
+        <!-- PRODUCTO 3 -->
+        <article class="producto-card">
+
+          <div class="producto-categoria">
+            PERFUMERÍA
+          </div>
+
+          <h3>
+            Perfume Arabian Nights
+          </h3>
+
+          <p>
+            Fragancia de 100 ml.
+          </p>
+
+          <div class="precio">
+            $19.95 USD
+          </div>
+
+          <a
+            href="https://alawao.com/producto/perfume-arabian-nights/"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            VER PRODUCTO Y COMPRAR
+          </a>
+
+        </article>
+
+
+        <!-- COMBO DE MERCADO 1 -->
+        <article class="producto-card">
+
+          <div class="producto-categoria">
+            COMBOS DE MERCADO
+          </div>
+
+          <h3>
+            Combo Básico Cuba
+          </h3>
+
+          <p>
+            Una opción práctica de alimentos para enviar a Cuba.
+            Consulta los productos incluidos y las condiciones directamente en Alawao.
+          </p>
+
+          <div class="precio">
+            $58.95 USD
+          </div>
+
+          <a
+            href="https://alawao.com/producto/combo-basico-cuba/"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            VER PRODUCTO Y COMPRAR
+          </a>
+
+        </article>
+
+
+        <!-- COMBO DE MERCADO 2 -->
+        <article class="producto-card">
+
+          <div class="producto-categoria">
+            COMBOS DE MERCADO
+          </div>
+
+          <h3>
+            Combo Premium
+          </h3>
+
+          <p>
+            Una selección más completa de alimentos para enviar a Cuba.
+            Consulta el contenido y las condiciones directamente en Alawao.
+          </p>
+
+          <div class="precio">
+            $149.95 USD
+          </div>
+
+          <a
+            href="https://alawao.com/producto/combo-premium/"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            VER PRODUCTO Y COMPRAR
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+    <section>
+
+      <div class="section-heading">
+
+        <h2>
+          ¿Buscas algo más?
+        </h2>
+
+        <p>
+          Además de nuestra selección, en Alawao encontrarás muchas otras
+          categorías para enviar a Cuba:
+        </p>
+
+      </div>
+
+
+      <div class="categorias">
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🛒 Supermercado y alimentos
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          💊 Farmacia y salud
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🧴 Aseo y perfumería
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🏠 Hogar
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          ⚡ Electrodomésticos
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🍳 Cocina
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          📱 Electrónicos y celulares
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🚗 Automotriz y accesorios
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🏍️ Autos y motocicletas
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          💎 Joyería
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          👟 Deportes
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🧸 Niños y juguetes
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🐾 Mascotas
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🔧 Ferretería
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🎁 Regalos y ocasiones especiales
+        </a>
+
+        <a class="categoria" href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/" target="_blank" rel="noopener">
+          🌸 Flores y más
+        </a>
+
+      </div>
+
+
+      <div style="text-align:center;margin-top:30px;">
+
+        <a
+          class="btn"
+          href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          VER TODAS LAS CATEGORÍAS EN ALAWAO
+        </a>
+
+        <p style="color:var(--gris);margin-top:15px;">
+          Hay mucho más por descubrir. Explora Alawao y encuentra el producto
+          que buscas para enviar a Cuba.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA FINAL -->
+    <section>
+
+      <div class="cta-final">
+
+        <h2>
+          Encuentra lo que necesitas para Cuba
+        </h2>
+
+        <p>
+          Explora la selección, revisa las condiciones y continúa directamente
+          en Alawao.com para completar tu compra.
+        </p>
+
+        <a
+          class="btn"
+          href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          EXPLORAR ALAWAO
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEGAL -->
+    <section class="legal">
+
+      <h2>
+        Compra con tranquilidad
+      </h2>
+
+      <p>
+        Esta página es una vitrina independiente con enlaces de referencia
+        hacia Alawao.com.
+      </p>
+
+      <p>
+        No se añade ningún cargo por utilizar esta página. El cliente realiza
+        su compra directamente en Alawao.com.
+      </p>
+
+      <p>
+        Si realizas una compra después de acceder mediante nuestros enlaces,
+        podemos recibir una comisión de referencia.
+      </p>
+
+      <p>
+        Los precios, disponibilidad, métodos de pago, tiempos de entrega,
+        devoluciones y demás condiciones son gestionados por Alawao y pueden cambiar.
+      </p>
+
+      <p>
+        El nombre, logotipo, fotografías y demás elementos de marca de Alawao
+        pertenecen a sus respectivos titulares.
+      </p>
+
+      <p>
+        <strong>
+          © 2026 Alawao Selection. Todos los derechos reservados.
+        </strong>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>
+      ALAWAO — Selección para enviar a Cuba
+    </strong>
+
+    <p>
+      Una vitrina sencilla para descubrir productos y continuar directamente
+      en Alawao.com.
+    </p>
+
+    <br>
+
+    <a
+      class="btn"
+      href="https://alawao.com/"
+      target="_blank"
+      rel="noopener"
+    >
+      ALAWAO.COM
+    </a>
+
+  </footer>
+
+</body>
+</html>
